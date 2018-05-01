@@ -1,0 +1,90 @@
+//**********************************************
+// Wrapper for the Header section
+//**********************************************
+
+//Header wrapper
+.panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 92vh;
+    @include media ($tablet-width) {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+    }
+    @include media ($desktop-width) {
+      justify-content: flex-start;
+    }
+  }
+  
+  //*********************************************
+  // Used to resize header upon section selection
+  //*********************************************
+  .panel-resize {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    @include media ($tablet-width) {
+      display: flex;
+      flex-flow: row wrap;
+      padding-top: 1rem;
+    }
+    @include media ($desktop-width) {
+      display: flex;
+      flex-flow: row wrap;
+    }
+  }
+  
+  //****************************
+  // Sections drop-down menu
+  //****************************
+  
+  .logo-wrapper {
+    // border: 2px dotted orange;
+    @include media ($tablet-width) {
+      width: 23%;
+    }
+    @include media ($desktop-width) {
+      width: 19%;
+    }
+  }
+  
+  .logo {
+    height: auto;
+    width: 100%;
+    padding-top: 50%;
+    @include media ($tablet-width) {
+      padding: 0;
+    }
+  }
+  
+  .logo-resize {
+    padding-top: 13%;
+    width: 144px;
+    @include media ($tablet-width) {
+      padding-top:1rem;
+      width: 67px;
+    }
+  }
+  
+  .topics {
+    padding-bottom: 34px;
+    @include media ($tablet-width) {
+    }
+  }
+  
+  p {
+    padding: 1rem;
+    font-size: .75rem;
+  }
+  
+  select {
+    padding: 2.5px;
+    font-size: 1rem;
+    outline-color: #000;
+  }
+  
+  select:active, select:hover {
+    outline-color: #000;
+  }
