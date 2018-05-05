@@ -1,6 +1,10 @@
-//media query device width
-@mixin media($width) {
-  @media all and (min-width: $width) {
+@mixin tablet {
+  @media (min-width: $tablet-width) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: $desktop-width) {
     @content;
   }
 }

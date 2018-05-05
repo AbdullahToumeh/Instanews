@@ -1,90 +1,93 @@
-//**********************************************
-// Wrapper for the Header section
-//**********************************************
 
-//Header wrapper
-.panel {
+
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+
+
+.loading-image {
+  height: auto;
+  max-width: 100%;
+}
+
+header {
+  padding-top: 12.5rem;
+}
+
+
+.menue{
+  background-color: white;
+  font-size: 1.1rem;
+}
+
+.loading {
+  margin-top:auto;
+}
+
+.insta-header p {
+  font-size: 0.8rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+@media (min-width: 600px) {
+  
+
+ 
+  
+  header {
+    display: flex;
+    flex-flow: nowrap row;
+    width: 100%;
+  }
+  .logo {
+    height: auto;
+    max-width: 100%;
+  } 
+  
+
+
+  .logo-container {
+    display: flex;
+    justify-content: flex-start;
+    flex-basis: 23%;
+    margin-left: 5.6rem;
+    margin-top: 3rem;
+    
+  }
+
+  .choose-a-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 92vh;
-    @include media ($tablet-width) {
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: center;
-    }
-    @include media ($desktop-width) {
-      justify-content: flex-start;
-    }
+    align-content: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-left: 2rem;
   }
+}
+
+// #articles {
+//   display: grid;
+//   grid-template-columns: 1fr;
   
-  //*********************************************
-  // Used to resize header upon section selection
-  //*********************************************
-  .panel-resize {
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    @include media ($tablet-width) {
-      display: flex;
-      flex-flow: row wrap;
-      padding-top: 1rem;
-    }
-    @include media ($desktop-width) {
-      display: flex;
-      flex-flow: row wrap;
-    }
-  }
-  
-  //****************************
-  // Sections drop-down menu
-  //****************************
-  
-  .logo-wrapper {
-    // border: 2px dotted orange;
-    @include media ($tablet-width) {
-      width: 23%;
-    }
-    @include media ($desktop-width) {
-      width: 19%;
-    }
-  }
-  
-  .logo {
-    height: auto;
-    width: 100%;
-    padding-top: 50%;
-    @include media ($tablet-width) {
-      padding: 0;
-    }
-  }
-  
-  .logo-resize {
-    padding-top: 13%;
-    width: 144px;
-    @include media ($tablet-width) {
-      padding-top:1rem;
-      width: 67px;
-    }
-  }
-  
-  .topics {
-    padding-bottom: 34px;
-    @include media ($tablet-width) {
-    }
-  }
-  
-  p {
-    padding: 1rem;
-    font-size: .75rem;
-  }
-  
-  select {
-    padding: 2.5px;
-    font-size: 1rem;
-    outline-color: #000;
-  }
-  
-  select:active, select:hover {
-    outline-color: #000;
-  }
+
+// }
+
+// .articles li  {
+//   display: block;
+//   height: 420px;
+//   width: 100%;
+//   background-size: cover;
+//   background-position: 50%;
+// }
+
+.article-item {
+  height: 420px;
+  width: 100%;
+  background-position: 50%;
+
+}

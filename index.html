@@ -10,36 +10,40 @@
 
 </head>
 <body>
-    <header class="panel">
-        <div class="logo-wrapper">
-         <img class="logo" src="images/nyt-logo.svg" alt="New York Times logo">
-        </div>
-  
-        <div class="topics">
-          <p>
-            Choose a section:
-          </p>
-          <select name="sections">
-            <option value="">Sections...</option>
+  <div class="container">
+    <header class="insta-header">
+      <div class="logo-container">
+          <img src="images/nyt-logo.svg" alt="new york times logo" class="logo">
+
+      </div>
+      <div class="choose-a-section">
+          <p>Choose a section:</p>
+          <select name="sections" class="menue" id="menue-id">
+            <option>Sections</option>
             <option value="home">Home</option>
-            <option value="science">Science</option>
+            <option value="arts">Arts</option>
             <option value="business">Business</option>
             <option value="sports">Sports</option>
             <option value="technology">Technology</option>
             <option value="fashion">Fashion</option>
           </select>
-        </div>
-    </header>
-      <div class="loadingImage">
-        <img src="images/ajax-loader.gif"  alt="Loading image gif">
+
       </div>
-      <ul class ='articleList'></ul>
-      <footer>
-        <p>
-          &copy; Copyright 2017
-          <span class="format-text">instanews</span>
-        </p>
-      </footer>
+      <div class="grid">
+      <ul id="articles"></ul>
+    </div> 
+    </header>
+
+    <section class="loading">
+      <img src="images/ajax-loader.gif" alt="loader" class="loading-image" style="display:none">
+    </section>
+
+    <footer class="insta-footer">
+      <p>© Copyright 2016 INSTANEWS</p>
+    </footer>
+  </div>
+  
+    
     <script src="lib/jquery-3.3.1.min.js"></script>
     <script src="lib/jquery.selectric.min.js"></script>
     <script src="build/js/main.min.js"></script>

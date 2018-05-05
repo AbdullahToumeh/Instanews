@@ -1,11 +1,34 @@
-//**********************************
-// Applied to body of site
-//**********************************
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
 
 body {
-    background-color: $bg-color;
-    color: $font-color;
-    font-family: $main-font;
-    font-size: $base-font-size;
-    text-align: center;
+  background-color: $background-color;
+  font-family: $font;
+  font-size:$font-size;
+  color: $font-color;
+  text-align: center;
+
+  .loading {
+    display: flex;
   }
+
+  .loading-image {
+    display: none;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+  }
+}
+.container {
+  display: flex;
+  min-height: 100vh;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: space-between;
+  align-content: center;
+  
+}

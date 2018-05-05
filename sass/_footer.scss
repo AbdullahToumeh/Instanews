@@ -1,13 +1,8 @@
 footer {
-  align-content: flex-end;
-  text-align: center;
-  font-size: 1.25rem;
-  color: #c2c2c2;
-  @include media ($desktop-width) {
-    text-align: left;
-  }
+  color: $footer-color;
+  margin-bottom: 3rem;
+  font-family: $font;
+  font-size:$font-size*0.9;
+  
 }
 
-.format-text {
-  text-transform: uppercase;
-}
