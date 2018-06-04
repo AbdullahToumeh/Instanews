@@ -1,46 +1,53 @@
-$("#menue-id").on("change", function() {
-var selected = $(this).val();
-$("#articles").empty();
-$("header").addClass("header-up");
-$(".loading-image").show();
+$(document).ready (function() {
+  $("#menue-id").on("change", function(data) {
+    var selected = $(this).val();
+    $(".storied-list").empty();
+    $("header").addClass("header-up");
+    $(".loading-image").show();
+      
+    // Built by LucyBot. www.lucybot.com
+    var url = "https://api.nytimes.com/svc/topstories/v2/" + selected + ".json";
+    url += '?' + $.param({
+      'api-key': "c547b52b46854c03b45433b1b9a777c1"
+    });
+    $.ajax({
+      url: url,
+      method: 'GET',
+    })
 
-// Built by LucyBot. www.lucybot.com
-var url = "https://api.nytimes.com/svc/topstories/v2/" + selected + ".json";
-url +=
- '?' + 
- $.param({
-  'api-key': "c547b52b46854c03b45433b1b9a777c1"
+    .done(function(data) {
+
+      var filterResult = data.results.filter(function(index) {
+        return index.multimedia.length;
+      }).slice(0,12);
+
+      $.each(filterResult, function(key, value) {
+
+        var articleLink = value.url;
+        var image = value.multimedia[4].url;
+        var text = value.abstract;
+        var html = '';
+
+        html += '<a href=' + articleLink + '>';
+        html += '<li>';
+        html += '<div class="image-wrapper" style="background-image:url(' + image + ')">';
+        html += '<div class="text">';
+        html += '<p>' + text + '</p></div></div>';
+        html += '</li>';
+        html += '</a>';
+
+        $(".storied-list").append(html);
+
+        $(".loading-image").hide();
+                
+      });
+
+    })
+    
+    .fail(function() {
+      alert("Sorry, an unexpected error occured. Please, try again later")
+    });
+
+  })
+
 });
-$.ajax({
-  url: url,
-  method: 'GET',
-})
-.done(function(data) {
-  console.log(data);
-    var results = data.results;
-    var filterResults = data.results.filter(function(index){ 
-      return index.multimedia.length;
-    }).slice(0,12);
-    console.log(results);
-
-
-$.each(results, function(arrayIndex, object) {
-// TODO, see what's in the value to add e.g. the description, image, link
-console.log(object.abstract);
-console.log(object.multimedia[4].url);
-console.log(object.url);
-
-return 
-
-$("#articles").append("<li class='article-item' style='background: url(" + object.multimedia[4].url + ")'>" + object.title + "</li>");
-
-$(".loading-image").hide();
-
-})//End of $.each
-
-})//End of done
-
-.fail(function(err) {
-$('.results').append('<p>Sorry, it appears there is a problem with the page.</p>');
-});
-}); // change event & function
