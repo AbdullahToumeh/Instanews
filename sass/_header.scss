@@ -7,6 +7,9 @@ html {
 img {
   height: auto;
   max-width: 100%;
+  position: relative;
+  left: -2rem;
+  top: 1rem;
 }
 
 
@@ -52,6 +55,7 @@ header {
 
    .logo-container {
      padding-top:2rem;
+
    }
 
    .choose-a-section{
@@ -81,4 +85,40 @@ header {
 
   }
 
+.logo-container {
+  margin-left: 3.5rem;
+  margin-bottom: 1rem;
+  transition: all .5s ease-out .5s;
+}
 
+@include tablet {
+  .insta-header {
+    display: flex;
+  }
+
+  .logo-container {
+    flex: 0 1 35%;
+    margin: 0 1rem 0 0 ;
+  }
+
+  .choose-a-section {
+    padding-top: 3rem;
+    text-align: start;
+  }
+}
+
+@include desktop {
+  header {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .choose-a-section {
+    position: relative;
+    right: 4rem;
+    top: 2rem;
+    p {
+      font-size: 1rem;
+    }
+  }
+}

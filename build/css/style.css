@@ -169,7 +169,10 @@ html {
 
 img {
   height: auto;
-  max-width: 100%; }
+  max-width: 100%;
+  position: relative;
+  left: -2rem;
+  top: 1rem; }
 
 .loading-image {
   height: auto;
@@ -226,3 +229,36 @@ header {
         width: 4rem; }
       .header-up .logo-container {
         padding-right: 6rem; } }
+
+.logo-container {
+  margin-left: 3.5rem;
+  margin-bottom: 1rem;
+  -webkit-transition: all .5s ease-out .5s;
+  transition: all .5s ease-out .5s; }
+
+@media (min-width: 600px) {
+  .insta-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  .logo-container {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 35%;
+            flex: 0 1 35%;
+    margin: 0 1rem 0 0; }
+  .choose-a-section {
+    padding-top: 3rem;
+    text-align: start; } }
+
+@media (min-width: 1000px) {
+  header {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    width: 100%; }
+  .choose-a-section {
+    position: relative;
+    right: 4rem;
+    top: 2rem; }
+    .choose-a-section p {
+      font-size: 1rem; } }
