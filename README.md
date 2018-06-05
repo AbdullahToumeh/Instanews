@@ -8,5 +8,5 @@ A website that uses jQuery ajax method to populate news from the New York Times 
 2.use css transition to move the logo smoothly .
 
 ## Personal Learning
-using jQuery ajax 
-using transition with css
+- using jQuery ajax 
+- using transition with css
